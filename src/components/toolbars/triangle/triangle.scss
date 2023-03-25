@@ -1,9 +1,11 @@
-@use "../../../themes/overlay";
-
 :host(.top) {
   div.triangle {
     bottom: unset;
+<<<<<<< HEAD
     top: 0px;
+=======
+    top: 0;
+>>>>>>> 94f4373eb5dd5abf5bb8b5575c7752a9e723e525
     transform: rotate(180deg) translate(50%, 100%);
   }
 }
@@ -11,9 +13,16 @@
 div.triangle {
   z-index: 1;
 
+  /**
+   * @prop --stylo-triangle-width: The width of the triangle
+   * @default 22px
+   */
+  --triangle-width: var(--stylo-triangle-width, 22px);
+
   position: absolute;
   width: 0;
   height: 0;
+<<<<<<< HEAD
   bottom: 0px;
   left: max(var(--stylo-toolbar-triangle-start), calc(var(--stylo-triangle-width, 40px) / 2));
 
@@ -35,6 +44,20 @@ div.triangle {
   /**
    * @prop --stylo-triangle-drop-shadow: drop-shaddow of the triangle
    * @default 2
+=======
+  bottom: 0;
+  left: var(--stylo-toolbar-triangle-start);
+  transform: translate(-50%, 100%);
+
+  background: transparent;
+
+  border-left: calc(var(--triangle-width) / 2) solid transparent;
+  border-right: calc(var(--triangle-width) / 2) solid transparent;
+  border-top: calc(var(--triangle-width) / 2) solid var(--stylo-background, var(--white));
+
+  /**
+   * @prop --stylo-triangle-drop-shadow: drop-shadow of the triangle
+>>>>>>> 94f4373eb5dd5abf5bb8b5575c7752a9e723e525
    */
   filter: drop-shadow(var(--stylo-triangle-drop-shadow));
 }
